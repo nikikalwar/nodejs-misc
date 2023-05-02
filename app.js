@@ -1,11 +1,14 @@
-//example for async await
+//post api
+const express = require ("express")
+const app = express();
 
-const test = async() => {
-    if(true){
-        console.log("Hello world")
-    }
-}
+app.post('/',(req,res)=>{
+    res.send("received post request");
+    res.end()
+})
 
-(async()=>{
-    await test();
-})();
+app.listen(3000,()=>{
+    console.log("port is running at",3000)
+})
+
+
